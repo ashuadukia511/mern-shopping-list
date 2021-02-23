@@ -5,7 +5,10 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 
+const itemRouter = require('./api/routes/items');
+
 app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
 
 const db = process.env.DB_URL;
@@ -18,5 +21,9 @@ mongoose.connect(db, {
 }).catch((error) => {
     console.log(error);
 });
+
+
+app.use('/api/items', itemRouter);
+
 
 module.exports = app;
