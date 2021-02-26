@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "This is a tutorial on mern stack",
   "main": "server.js",
+  "engine" : {
+    "node" : "14.x"
+  },
   "scripts": {
     "client-install" : "npm install --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
