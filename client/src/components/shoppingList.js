@@ -20,10 +20,10 @@ class shoppingList extends Component {
                 <Container>
                     <ListGroup>
                         <TransitionGroup className = "shopping-list">
-                            {items.map(({id, name}) => {
-                                return <CSSTransition key = {id} timeout = {500} classNames = "fade">
+                            {items.map(({_id, name, date}) => {
+                                return <CSSTransition key = {_id} timeout = {500} classNames = "fade">
                                     <ListGroupItem>
-                                        <Button color = "danger" className = "remove-btn mr-2" size = "sm" onClick = {this.onDelete.bind(this, id)}>&times;</Button>
+                                        <Button color = "danger" className = "remove-btn mr-2" size = "sm" onClick = {this.onDelete.bind(this, _id)}>&times;</Button>
                                         {name}
                                     </ListGroupItem>
                                 </CSSTransition>
