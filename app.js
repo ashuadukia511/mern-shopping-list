@@ -13,7 +13,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
 
-const db = require('./config/keys').mongoURL;
+const db = process.env.DB_URL;
 mongoose.connect(db, {
     useNewUrlParser : true,
     useUnifiedTopology : true,
